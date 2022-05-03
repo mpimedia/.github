@@ -1,0 +1,106 @@
+name: Continuous Integration
+
+on:
+  push:
+    branches:
+      - '*'
+  pull_request:
+    branches:
+      - '*'
+
+jobs:
+  test:
+    name: Run RSpec Tests
+    runs-on: ubuntu-latest
+    
+    services:
+      postgres:
+        image: postgres:latest
+        env:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+          POSTGRES_DB: postgres
+        ports:
+        - 5432:5432
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+        
+      redis:
+        image: redis:latest
+        ports:
+        - 6379:6379
+        options: >-
+          --entrypoint redis-server
+          --health-cmd "redis-cli ping"
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v3
+
+      - name: Read .tool-versions
+        uses: marocchino/tool-versions-action@v1
+        id: versions
+
+      - name: Install elasticsearch
+        uses: ankane/setup-elasticsearch@v1
+        with:
+          elasticsearch-version: ${{ steps.versions.outputs.elasticsearch }}
+
+      - name: Install ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: ${{ steps.versions.outputs.ruby }}
+
+      - name: Retrieve gem cache
+        id: cache-bundle
+        uses: actions/cache@v1
+        with:
+          path: vendor/bundle
+          key: bundle-${{ hashFiles('**/Gemfile.lock') }}
+
+      - name: Install ruby gems
+        env:
+          RAILS_ENV: test
+        run: |
+          bundle config set --local path 'vendor/bundle'
+          bundle install
+
+      - name: Install node
+        uses: actions/setup-node@v3
+        with:
+          cache: 'yarn'
+          node-version: ${{ steps.versions.outputs.nodejs }}
+      
+      - name: Install node packages
+        run: yarn install
+
+      - name: Setup database
+        env:
+          RAILS_ENV: test
+        run: bin/rails db:create db:migrate
+
+      - name: Run tests
+        run: bundle exec rspec --format RSpec::Github::Formatter --format progress
+
+  deploy:
+    name: Deploy to Heroku
+    if: github.ref_name == 'main'
+    runs-on: ubuntu-latest
+    needs: test
+
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v3
+
+      - name: Deploy to Heroku (if 'main' branch)
+        uses: akhileshns/heroku-deploy@v3.12.12
+        with:
+          heroku_api_key: ${{secrets.HEROKU_API_KEY}}
+          heroku_app_name: ${{secrets.HEROKU_APP_NAME}}
+          heroku_email: ${{secrets.HEROKU_EMAIL}}

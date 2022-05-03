@@ -1,0 +1,8 @@
+{
+    "name": "CI Workflow",
+    "description": "MPI Media CI starter workflow",
+    "iconName": "Ruby_On_Rails_Logo",
+    "categories": [
+      "ruby", "JavaScript"
+    ]
+}
