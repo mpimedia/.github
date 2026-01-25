@@ -8,11 +8,29 @@ assignees: ''
 
 ## Summary
 
-A clear description of the task to be completed.
+A clear and concise description of the task to be completed.
 
-## Details
+## Background
 
-Provide more context about what needs to be done and why.
+Explain why this task is needed. What problem does it solve or what improvement does it provide?
+
+## Proposed Approach
+
+Describe how you envision this task being completed.
+
+## Scope
+
+List the specific items or areas this task covers:
+
+- [ ] Item 1
+- [ ] Item 2
+- [ ] Item 3
+
+## Files or Areas Affected
+
+List any known files, models, or areas of the codebase that will be affected:
+
+-
 
 ## Acceptance Criteria
 
@@ -22,4 +40,4 @@ Provide more context about what needs to be done and why.
 
 ## Additional Context
 
-Add any other context or references here.
+Add any other context, references, or documentation links here.
