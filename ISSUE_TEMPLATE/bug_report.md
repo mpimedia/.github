@@ -1,7 +1,7 @@
 ---
 name: Bug Report
 about: Report a bug or unexpected behavior
-title: "[Bug] "
+title: "[BUG] "
 labels: bug
 assignees: ''
 ---
@@ -25,24 +25,16 @@ What you expected to happen.
 
 What actually happened.
 
+## Screenshots
+
+If applicable, add screenshots to help explain the problem.
+
 ## Environment
 
-- **Browser/Device:** (e.g., Chrome 120, Safari on iOS)
-- **User Role:** (e.g., Admin, Public user)
-- **Environment:** (e.g., Production, Staging, Development)
-
-## Screenshots or Logs
-
-If applicable, add screenshots or error logs to help explain the problem.
-
-```
-Paste any relevant error messages or logs here
-```
-
-## Possible Cause
-
-If you have any ideas about what might be causing this, note them here.
+- **Browser/Client:** [e.g., Chrome 120, Safari 17, API client]
+- **OS:** [e.g., macOS 14, Windows 11]
+- **App Version/Branch:** [e.g., main, v1.2.3]
 
 ## Additional Context
 
-Add any other context about the problem here.
+Add any other context about the problem here (error messages, logs, related issues).
