@@ -1,22 +1,30 @@
 ---
 name: Feature Request
-about: Request a new feature or enhancement
-title: "[Feature] "
-labels: feature
+about: Suggest a new feature or enhancement
+title: "[FEATURE] "
+labels: enhancement
 assignees: ''
 ---
 
 ## Summary
 
-A clear and concise description of the feature you're requesting.
+A clear and concise description of the feature you'd like.
 
-## Problem or Motivation
+## Problem Statement
 
-Why is this feature needed? What problem does it solve?
+Describe the problem this feature would solve. Ex. "I'm always frustrated when..."
 
 ## Proposed Solution
 
-Describe how you envision this feature working.
+Describe the solution you'd like to see implemented.
+
+## Alternatives Considered
+
+Describe any alternative solutions or features you've considered.
+
+## User Stories
+
+- As a [type of user], I want [goal] so that [benefit]
 
 ## Acceptance Criteria
 
@@ -24,19 +32,6 @@ Describe how you envision this feature working.
 - [ ] Criterion 2
 - [ ] Criterion 3
 
-## User Interface
-
-If applicable, describe any UI changes:
-- Where should this appear in the admin/public interface?
-- Any specific design requirements or mockups?
-
-## Technical Notes
-
-Optional guidance for implementation:
-- Relevant models, controllers, or components
-- Related existing code to reference
-- Any constraints or considerations
-
 ## Additional Context
 
-Add any other context, screenshots, or examples about the feature request here.
+Add any other context, mockups, or screenshots about the feature request here.
