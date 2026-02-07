@@ -1,5 +1,1 @@
 blank_issues_enabled: true
-contact_links:
-  - name: Documentation
-    url: https://github.com/mpimedia/mpi-application-standards
-    about: Check the shared standards repository for coding guidelines
