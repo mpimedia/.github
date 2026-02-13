@@ -33,6 +33,51 @@ git checkout main
 git commit -m "Add feature"  # DON'T DO THIS
 ```
 
+
+---
+
+## 🚨 CRITICAL: Agent Attribution (Required — No Exceptions)
+
+Every AI agent (Copilot, Claude, or any other) **must** include attribution on every piece of work it produces. This is non-negotiable across all MPI Media repositories.
+
+### Commits
+
+Include a `Co-Authored-By` trailer with the agent's name:
+
+```
+Co-Authored-By: GitHub Copilot <noreply@github.com>
+```
+
+If you know the specific model, include it:
+
+```
+Co-Authored-By: GitHub Copilot (Claude Sonnet 4.5) <noreply@github.com>
+Co-Authored-By: Claude Opus 4.6 <noreply@anthropic.com>
+```
+
+### Pull Requests
+
+Include the agent's name and model in the PR description footer:
+
+```
+Generated with GitHub Copilot (Claude Sonnet 4.5)
+```
+
+### Issue Comments
+
+Include a brief attribution line at the end of each comment:
+
+```
+— GitHub Copilot (Claude Sonnet 4.5)
+```
+
+### PR Review Comments
+
+Include attribution in each review comment or summary.
+
+### Multiple Agents
+
+If multiple agents contribute to the same commit, include a `Co-Authored-By` line for each.
 ---
 
 ## Organization Overview
