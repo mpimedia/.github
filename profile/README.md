@@ -22,8 +22,8 @@ MPI Media develops and maintains a suite of Ruby on Rails applications serving t
 ### Core Applications
 
 - **[Optimus](https://github.com/mpimedia/optimus)** - Rails application template and pattern source
-- **[Avails](https://github.com/mpimedia/avails)** - Central data repository
-- **[SFA](https://github.com/mpimedia/sfa)** - Video clip hosting and search platform
+- **[Avails](https://github.com/mpimedia/avails_server)** - Central data repository
+- **[SFA](https://github.com/mpimedia/wpa_film_library)** - Video clip hosting and search platform
 - **[Garden](https://github.com/mpimedia/garden)** - Static site generator
 - **[Harvest](https://github.com/mpimedia/harvest)** - Ecommerce platform
 
